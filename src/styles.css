@@ -1,4 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300&family=Open+Sans&family=Outfit:wght@300;400&family=Poppins&family=Roboto:wght@300;500&family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@500&family=Open+Sans&family=Outfit:wght@300;400&family=Poppins&family=Roboto:wght@300;500&family=Ubuntu:wght@300&display=swap");
+
+:root {
+  --purple: #854dff;
+  --light-red: #ff5757;
+  --white: #ffffff;
+  --light-white: #f0f0f0;
+  --light-grey: #dbdbdb;
+  --dark-grey: #716f6f;
+  --dark-black: #141414;
+}
 
 * {
   padding: 0;
@@ -8,4 +18,174 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--light-white);
+}
+
+input.ng-invalid.ng-touched + label {
+  color: var(--light-red);
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid var(--light-red);
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.date-container .container {
+  padding: 25px 20px;
+  width: 600px;
+}
+
+.container .card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 12%);
+  background-color: var(--white);
+  border-radius: 15px 15px 140px 15px;
+  padding: 40px;
+}
+@media (max-width: 768px) {
+  .container .card {
+    padding: 40px 20px;
+  }
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+form .form-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  form {
+    margin-bottom: 4rem;
+  }
+  form .form-container {
+    gap: 0.5rem;
+  }
+}
+
+.form-container .form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark-grey);
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.form-input small {
+  font-style: italic;
+  color: var(--light-red);
+  font-weight: 300;
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+}
+
+.form-input input {
+  width: 100%;
+  height: 50px;
+  padding: 8px 14px;
+  outline: none;
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--dark-black);
+}
+
+.form-input input::placeholder {
+  font-weight: 600;
+  color: var(--dark-grey);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+  .form-input input {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+  .form-input label {
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.card-body .form-action {
+  position: flex;
+  align-items: center;
+  position: relative;
+}
+.form-action hr {
+  width: 100%;
+  height: 2px;
+}
+.form-action .btn-wrapper {
+  /* display: flex;
+  align-self: center; */
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+}
+.btn-wrapper button {
+  border: 1px solid transparent;
+  outline: none;
+  width: 55px;
+  cursor: pointer;
+  height: 55px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  transition: 0.3s all;
+}
+.form-action button:hover {
+  background-color: var(--dark-black);
+}
+.form-action button > img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.card-body .date-wrapper {
+  margin-top: 2rem;
+}
+.date-wrapper .form-date {
+  display: flex;
+}
+.form-date label {
+  font-size: 3rem;
+  display: block;
+  color: var(--purple);
+  font-weight: 600;
+}
+.form-date h4 {
+  margin-left: 0.7rem;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--dark-black);
+  font-style: italic;
 }
